@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes-Taker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/design.css">
+    <script type="module" src="scripts/controllers/notes-controller.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="alert alert-info text-center">Notes Taking App</h1>
+        <div class="form-group">
+            <label for="">ID</label>
+            <input class="form-control" id="id" type="text" placeholder="ID will automatically generated" disabled>
+        </div>
+        <div class="form-group">
+            <label for="">Title</label>
+            <input class="form-control" id="title" type="text" placeholder="Type title">
+        </div>
+        <div class="form-group">
+            <label for="">Description</label>
+            <textarea class="form-control" id="desc" cols="30" rows="5" placeholder="Type Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="">Completion Date</label>
+            <input class="form-control" id="cdate" type="date" placeholder="Type title">
+        </div>
+        <div class="form-group">
+            <label for="">Importance</label>
+            <input class="form-control" id="importance" type="color">
+        </div>
+        <div>
+            <button id="add" class="btn btn-primary me-3">Add</button>
+            <button id="delete" class="btn btn-danger me-3">Delete</button>
+            <button id="update" class="btn btn-warning me-3">Update</button>
+            <button id="clear" class="btn btn-secondary me-3">Clear All</button>
+            <button id="sort" class="btn btn-success me-3">Sort</button>
+            <button class="btn btn-success me-3">Save</button>
+            <button class="btn btn-secondary me-3">Load</button>
+            <button id="deleteall" class="btn btn-danger me-3">Delete All</button>
+            <button class="btn btn-success me-3">Save to Server</button>
+            <button class="btn btn-secondary">Load from Server</button>
+        </div>
+        <div class="my-2">
+            <h3>Total Records <span id="total"></span> Mark Records <span id="marktotal"></span> UnMark Records <span id="unmarktotal"></span></h3>
+            <div class="my-3">
+                <input id="searchkey" class="me-2" type="number" placeholder="Search by ID">
+                <button id="search" class="btn btn-success">Search</button>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Completion Date</th>
+                    <th>Importance</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody id="notes">
+                <!----Dynamic Records will be come here---->
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
